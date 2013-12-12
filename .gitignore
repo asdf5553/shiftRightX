@@ -1,6 +1,21 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+public String[] shiftRightX(String[] words, String[] data)
+    {
+        int w= words.length;
+        int d= data.length;
+        String[] end= new String[w];
+        int upcount=0;
+        for (int cai=0; cai<w;cai++)
+        {
+            end[cai]=words[cai];
+        }
+        for (int x=0; x<d; x++)
+        {
+            for(int y=w-1; y>0; y--)
+            {
+                end[y]= end[y-1];
+            }
+            end[0]= data[upcount];
+            upcount++;
+        }
+        return end;
+    }
